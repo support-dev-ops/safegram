@@ -1,11 +1,11 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #FFFFFF;
     color: #000000;
     text-align: center;
     line-height: 1.6;
-    min-height: 100vh; /* Для фиксации футера */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -14,9 +14,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 10px 40px; /* Уменьшен верхний паддинг с 20px до 10px */
     background-color: #F5F5F5;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень у nav */
     position: relative;
     z-index: 1;
 }
@@ -27,13 +27,13 @@ nav {
 }
 
 .logo {
-    height: 60px; /* Увеличен с 40px */
+    height: 60px;
     margin-right: 10px;
 }
 
 .logo-container span {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500;
     color: #0088CC;
 }
 
@@ -49,6 +49,8 @@ nav {
     color: #000000;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase; /* Заглавные буквы */
     transition: color 0.3s;
 }
 
@@ -63,13 +65,13 @@ header {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 150px; /* Настрой под своё изображение */
+    background-size: 350px; /* Увеличен до 350px */
 }
 
 h1 {
     font-size: 32px;
     margin: 0 0 20px;
-    font-weight: normal;
+    font-weight: 500;
     color: #333333;
 }
 
@@ -98,7 +100,7 @@ h1 {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 150px;
+    background-size: 350px;
 }
 
 .feature {
@@ -124,7 +126,7 @@ h1 {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 150px;
+    background-size: 350px;
 }
 
 .big-download-btn {
@@ -146,8 +148,8 @@ footer {
     font-size: 14px;
     color: #666666;
     border-top: 1px solid #E0E0E0;
-    margin-top: auto; /* Фиксация футера внизу */
-    background-color: #F5F5F5; /* Светлый фон для футера */
+    margin-top: auto; /* Прижатие футера */
+    background-color: #F5F5F5;
     z-index: 1;
 }
 
@@ -170,7 +172,7 @@ footer p {
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
-        padding: 15px;
+        padding: 10px;
         gap: 10px;
     }
     .nav-links {
@@ -189,6 +191,6 @@ footer p {
         padding: 15px 40px;
     }
     .logo {
-        height: 50px; /* Чуть меньше на мобильных */
+        height: 50px;
     }
 }
