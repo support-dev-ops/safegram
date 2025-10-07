@@ -1,18 +1,65 @@
 :root {
+    --base-hue: 200; /* Синий тон для SafeGram */
+    --font-family: 'Roboto', sans-serif;
+    --leading: 1.5;
+    
+    /* Общие цвета (не меняют body) */
+    --bg-color: hsl(var(--base-hue) 25% 25%);
+    --bg-img-url: ur[](https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg);
+    --text-color: hsl(var(--base-hue) 40% 25%);
+    
+    /* Card vars (подогнано под FAQ) */
     --card-width: 55em;
     --card-height: auto;
     --card-padding: 30px;
     --card-corner-radius: 10px;
-    --base-hue: 200; /* Синий тон для SafeGram */
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     --card-bg-blur-amount: 10px;
+    --card-shadow: 
+        0 0 0.5rem 2px hsl(var(--base-hue) 25% 25% / 35%),
+        inset 0 0 0.1rem hsl(var(--base-hue) 75% 40% / 20%),
+        inset 0 0 0.2rem 0.1rem hsl(var(--base-hue) 75% 40% / 15%),
+        inset 0 0 0.3rem 0.2rem hsl(var(--base-hue) 75% 40% / 10%);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    max-width: var(--card-width);
+    min-height: var(--card-height);
+    padding: var(--card-padding);
+    border-radius: var(--card-corner-radius);
+    background-color: hsl(var(--base-hue) 25% 95% / 45%);
+}
+
+.card--glass {
+    font-size: 125%;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(var(--card-bg-blur-amount));
+}
+
+.card-footer {
+    margin-top: 10rem;
+    font-size: 0.75rem;
+    opacity: 75%;
 }
 
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font: 1em/var(--leading) var(--font-family), sans-serif;
+    color: var(--text-color);
     background-color: #FFFFFF;
-    color: #000000;
     text-align: center;
     line-height: 1.6;
     min-height: 100vh;
@@ -112,21 +159,6 @@ h1 {
     color: #333333;
 }
 
-/* Glassmorphism Card Styles */
-.card {
-    max-width: var(--card-width);
-    min-height: var(--card-height);
-    padding: var(--card-padding);
-    border-radius: var(--card-corner-radius);
-    background-color: hsl(var(--base-hue) 25% 95% / 45%);
-}
-
-.card--glass {
-    font-size: 125%;
-    box-shadow: var(--card-shadow);
-    backdrop-filter: blur(var(--card-bg-blur-amount));
-}
-
 /* FAQ Styles (на фоне body, с glassmorphism) */
 .faq-section {
     padding: 40px 20px;
@@ -135,8 +167,6 @@ h1 {
 }
 
 .faq-body {
-    max-width: var(--card-width); /* Подогнано под vars */
-    margin: 0 auto;
     /* Glassmorphism уже в class="card card--glass" */
 }
 
@@ -259,7 +289,7 @@ h1 {
         height: 50px;
     }
     .faq-body {
-        --card-padding: 20px; /* Адаптивно уменьшен padding */
+        --card-padding: 20px;
         padding: var(--card-padding);
     }
     .faq-title {
