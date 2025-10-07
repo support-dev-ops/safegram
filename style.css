@@ -6,13 +6,12 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 1000px;
     --card-height: auto;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 5px; /* Изменено на 5px */
+    --card-bg-blur-amount: 10px;
     --card-shadow: 
-        0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Более тёмный оттенок #b0b7c2 */
+        0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Цвет #b0b7c2 */
         inset 0 0 0.1rem hsl(214 16% 74% / 20%),
         inset 0 0 0.2rem 0.1rem hsl(214 16% 74% / 15%),
         inset 0 0 0.3rem 0.2rem hsl(214 16% 74% / 10%);
@@ -37,7 +36,7 @@ body {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 425px; /* Изменено на 425px */
+    background-size: 425px;
 }
 
 p {
@@ -156,7 +155,7 @@ h1 {
 }
 
 .faq-body {
-    max-width: var(--card-width);
+    width: 950px;
     min-height: var(--card-height);
     padding: var(--card-padding);
     border-radius: var(--card-corner-radius);
@@ -240,17 +239,18 @@ h1 {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
     border-left: none;
     padding-left: 0;
     margin-left: 0;
+    text-align: left; /* Добавлено для выравнивания текста влево */
 }
 
 .accordion-item.open .accordion-content {
     max-height: 500px;
     border-left: 2px solid #0088CC;
-    padding-left: 25px;
-    margin-left: 55px;
+    padding-left: 10px; /* Уменьшено для текста ближе к линии */
+    margin-left: 55px; /* Сохранено, чтобы не двигать линию */
     margin-top: 10px;
 }
 
@@ -288,6 +288,7 @@ h1 {
     }
     .faq-body {
         --card-padding: 1.5rem;
+        width: 100%;
     }
     .faq-title {
         font-size: 22px;
@@ -296,8 +297,8 @@ h1 {
         font-size: 16px;
     }
     .accordion-item.open .accordion-content {
-        margin-left: 30px;
-        padding-left: 15px;
+        margin-left: 55px;
+        padding-left: 10px;
     }
     .accordion-icon {
         font-size: 1.5em;
@@ -329,7 +330,7 @@ footer {
     padding: 20px;
     font-size: 14px;
     color: #666666;
-    border-top: 1px solid #E0E0E0;
+    border-top: 2px solid hsl(214 16% 74%);
     margin-top: auto;
     background-color: #d7dee6;
     z-index: 1;
