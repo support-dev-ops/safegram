@@ -37,6 +37,7 @@ body {
     background-repeat: repeat;
     background-position: center;
     background-size: 425px;
+    background-attachment: fixed; /* Добавлено для фиксации фона */
 }
 
 p {
@@ -210,7 +211,7 @@ h1 {
     font-size: 18px;
     font-weight: 500;
     color: #333333;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease; /* Ускорено с 0.3s до 0.4s для плавности */
     display: flex;
     align-items: center;
 }
@@ -224,7 +225,7 @@ h1 {
     font-weight: bold;
     margin-right: 0.65em;
     color: #0088CC;
-    transition: color 0.3s ease;
+    transition: color 0.4s ease; /* Ускорено с 0.3s до 0.4s */
     min-width: 25px;
 }
 
@@ -239,19 +240,19 @@ h1 {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* Ускорено с 0.3s до 0.4s */
     border-left: none;
     padding-left: 0;
     margin-left: 0;
-    text-align: left; /* Добавлено для выравнивания текста влево */
+    text-align: left;
 }
 
 .accordion-item.open .accordion-content {
     max-height: 500px;
     border-left: 2px solid #0088CC;
-    padding-left: 10px; /* Уменьшено для текста ближе к линии */
-    margin-left: 55px; /* Сохранено, чтобы не двигать линию */
-    margin-top: 10px;
+    padding-left: 20px; /* Изменено на 20px */
+    margin-left: 55px;
+    margin-top: 12px; /* Изменено на 12px */
 }
 
 .faq-content {
@@ -260,7 +261,7 @@ h1 {
     line-height: 1.6;
     font-size: 16px;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease; /* Ускорено с 0.3s до 0.4s */
 }
 
 @media (max-width: 768px) {
@@ -298,7 +299,7 @@ h1 {
     }
     .accordion-item.open .accordion-content {
         margin-left: 55px;
-        padding-left: 10px;
+        padding-left: 20px;
     }
     .accordion-icon {
         font-size: 1.5em;
@@ -319,7 +320,7 @@ h1 {
     text-decoration: none;
     font-size: 28px;
     border-radius: 10px;
-    transition: background-color 0.3s;
+    transition: background-color 0.4s; /* Ускорено с 0.3s до 0.4s */
 }
 
 .big-download-btn:hover {
