@@ -5,20 +5,19 @@
     
     /* Общие цвета (не меняют body) */
     --bg-color: hsl(var(--base-hue) 25% 25%);
-    --bg-img-url: ur[](https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    /* Card vars (как в исходнике, подогнано под FAQ) */
-    --card-width: 500px; /* 500px, как в примере */
-    --card-height: auto; /* Авто */
-    --card-padding: 2.25rem; /* 36px */
-    --card-corner-radius: 1.5rem; /* 24px */
-    --card-bg-blur-amount: 1rem; /* 16px */
+    /* Card vars (адаптировано под FAQ) */
+    --card-width: 800px; /* Увеличено с 500px */
+    --card-height: auto;
+    --card-padding: 2.25rem;
+    --card-corner-radius: 1.5rem;
+    --card-bg-blur-amount: 10px; /* Увеличен для заметного эффекта */
     --card-shadow: 
-        0 0 0.5rem 2px hsl(var(--base-hue) 25% 25% / 35%),
-        inset 0 0 0.1rem hsl(var(--base-hue) 75% 40% / 20%),
-        inset 0 0 0.2rem 0.1rem hsl(var(--base-hue) 75% 40% / 15%),
-        inset 0 0 0.3rem 0.2rem hsl(var(--base-hue) 75% 40% / 10%);
+        0 0 0.5rem 2px hsl(200 100% 50% / 35%), /* Цвет сайта #0088CC */
+        inset 0 0 0.1rem hsl(200 100% 50% / 20%),
+        inset 0 0 0.2rem 0.1rem hsl(200 100% 50% / 15%),
+        inset 0 0 0.3rem 0.2rem hsl(200 100% 50% / 10%);
 }
 
 *,
@@ -37,7 +36,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* Фон по всему body (твой паттерн, не меняем) */
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
@@ -53,10 +51,10 @@ p:not(:last-child) {
 }
 
 .site-container {
-    min-height: auto; /* Для FAQ, не полная высота */
-    padding: 2rem; /* Как в примере */
+    min-height: auto;
+    padding: 2rem;
     display: grid;
-    place-items: center; /* Центрирование */
+    place-items: center;
 }
 
 .card {
@@ -64,20 +62,21 @@ p:not(:last-child) {
     min-height: var(--card-height);
     padding: var(--card-padding);
     border-radius: var(--card-corner-radius);
-    background-color: hsl(var(--base-hue) 25% 95% / 45%);
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый для стекла */
 }
 
 .card--glass {
     font-size: 125%;
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount)); /* Для Safari */
 }
 
 .card-footer {
     margin-top: 10rem;
     font-size: 0.75rem;
     opacity: 75%;
-    color: #666666; /* Адаптировано под SafeGram */
+    color: #666666;
 }
 
 nav {
@@ -167,7 +166,6 @@ h1 {
     color: #333333;
 }
 
-/* FAQ Styles (на фоне body, с glassmorphism) */
 .faq-section {
     padding: 40px 20px;
     position: relative;
@@ -175,7 +173,15 @@ h1 {
 }
 
 .faq-body {
-    /* Glassmorphism из .card .card--glass */
+    max-width: var(--card-width);
+    min-height: var(--card-height);
+    padding: var(--card-padding);
+    border-radius: var(--card-corner-radius);
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый для стекла */
+    font-size: 125%;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(var(--card-bg-blur-amount));
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount)); /* Для Safari */
 }
 
 .faq-header {
@@ -274,7 +280,6 @@ h1 {
     transition: opacity 0.3s ease;
 }
 
-/* Адаптивность для мобильных */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -296,10 +301,13 @@ h1 {
         height: 50px;
     }
     .site-container {
-        padding: 1rem; /* Уменьшено для мобильных */
+        padding: 1rem;
     }
     .card {
-        --card-padding: 1.5rem; /* Адаптивно */
+        --card-padding: 1.5rem;
+    }
+    .faq-body {
+        --card-padding: 1.5rem;
     }
     .faq-title {
         font-size: 22px;
