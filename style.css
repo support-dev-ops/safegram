@@ -76,20 +76,6 @@ h1 {
     color: #333333;
 }
 
-.download-btn {
-    background-color: #0088CC;
-    color: #FFFFFF;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.download-btn:hover {
-    background-color: #006BB3;
-}
-
 .features {
     display: flex;
     justify-content: center;
@@ -116,7 +102,7 @@ h1 {
     color: #333333;
 }
 
-/* FAQ Styles (адаптировано под SafeGram) */
+/* FAQ Styles (адаптировано под SafeGram, на фоне body) */
 .faq-section {
     padding: 40px 20px;
     position: relative;
@@ -124,12 +110,12 @@ h1 {
 }
 
 .faq-body {
-    max-width: 55em; /* Компактно, как features */
+    max-width: 55em;
     margin: 0 auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень, как у nav */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для выделения */
     border-radius: 10px;
-    padding: 30px; /* Компактный padding */
-    background-color: #FFFFFF;
+    padding: 30px;
+    background-color: transparent; /* Прозрачный, на фоне body */
 }
 
 .faq-header {
@@ -138,7 +124,7 @@ h1 {
 }
 
 .faq-title {
-    font-size: 28px; /* Уменьшено с 2em для баланса с h1 */
+    font-size: 28px;
     margin: 0.4em 0;
     font-weight: 500;
     color: #333333;
@@ -159,7 +145,7 @@ h1 {
 
 .faq-list > div {
     border-bottom: 1px solid #E0E0E0;
-    padding: 1em 0; /* Компактный padding */
+    padding: 1em 0;
 }
 
 .faq-list > div:last-child {
@@ -175,7 +161,7 @@ details > summary::-webkit-details-marker {
 }
 
 summary {
-    font-size: 18px; /* Адаптивно под сайт */
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
     -webkit-touch-callout: none;
@@ -198,7 +184,7 @@ details[open] summary ~ * {
 
 @keyframes sweep {
     0% { opacity: 0; margin-left: -10px; }
-    100% { opacity: 1; margin-left: 40px; } /* Уменьшено для компактности */
+    100% { opacity: 1; margin-left: 55px; } /* Оригинальная плавность */
 }
 
 details[open] summary {
@@ -207,19 +193,19 @@ details[open] summary {
 
 details[open] p {
     border-left: 2px solid #0088CC;
-    margin-left: 40px; /* Уменьшено */
-    padding-left: 20px; /* Уменьшено */
+    margin-left: 55px; /* Оригинальная плавность */
+    padding-left: 25px;
     opacity: 1;
-    transition: all 0.3s ease;
+    transition: all 3s ease; /* Оригинальная задержка 3s */
     color: #666666;
     line-height: 1.6;
-    font-size: 16px; /* Стандартный размер текста */
+    font-size: 16px;
 }
 
 details[open] summary:after {
     content: "-";
-    font-size: 2.5em; /* Уменьшено */
-    margin: -25px 0.35em 0 0; /* Адаптировано */
+    font-size: 3.2em;
+    margin: -33px 0.35em 0 0;
     font-weight: 200;
     color: #0088CC;
 }
@@ -230,7 +216,7 @@ summary:after {
     content: "+";
     color: #0088CC;
     float: left;
-    font-size: 1.5em; /* Уменьшено */
+    font-size: 1.8em;
     font-weight: bold;
     margin: -0.3em 0.65em 0 0;
     padding: 0;
@@ -261,15 +247,8 @@ summary:hover:after {
         flex-direction: column;
         padding: 40px 10px;
     }
-    .big-download-btn {
-        font-size: 22px;
-        padding: 15px 40px;
-    }
     .logo {
         height: 50px;
-    }
-    .download {
-        padding: 30px 10px 10px 10px;
     }
     .faq-body {
         padding: 20px;
@@ -282,20 +261,20 @@ summary:hover:after {
         font-size: 16px;
     }
     details[open] p {
-        margin-left: 25px;
+        margin-left: 30px;
         padding-left: 15px;
     }
     summary:after {
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
     details[open] summary:after {
-        font-size: 2em;
-        margin: -20px 0.35em 0 0;
+        font-size: 2.5em;
+        margin: -25px 0.35em 0 0;
     }
 }
 
 .download {
-    padding: 40px 20px 20px 20px;
+    padding: 40px 20px 60px 20px; /* Увеличен нижний padding для отступа от footer */
     margin-bottom: 0;
     position: relative;
     z-index: 1;
