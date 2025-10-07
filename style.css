@@ -6,16 +6,16 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 1000px; /* Изменено на 1000px */
+    --card-width: 1000px;
     --card-height: auto;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 15px;
+    --card-bg-blur-amount: 5px; /* Изменено на 5px */
     --card-shadow: 
-        0 0 0.5rem 2px hsl(214 16% 89% / 35%), /* Цвет #d7dee6 */
-        inset 0 0 0.1rem hsl(214 16% 89% / 20%),
-        inset 0 0 0.2rem 0.1rem hsl(214 16% 89% / 15%),
-        inset 0 0 0.3rem 0.2rem hsl(214 16% 89% / 10%);
+        0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Более тёмный оттенок #b0b7c2 */
+        inset 0 0 0.1rem hsl(214 16% 74% / 20%),
+        inset 0 0 0.2rem 0.1rem hsl(214 16% 74% / 15%),
+        inset 0 0 0.3rem 0.2rem hsl(214 16% 74% / 10%);
 }
 
 *,
@@ -37,7 +37,7 @@ body {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 400px;
+    background-size: 425px; /* Изменено на 425px */
 }
 
 p {
