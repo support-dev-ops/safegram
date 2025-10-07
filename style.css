@@ -37,7 +37,7 @@ body {
     background-repeat: repeat;
     background-position: center;
     background-size: 425px;
-    background-attachment: fixed; /* Добавлено для фиксации фона */
+    background-attachment: fixed;
 }
 
 p {
@@ -103,7 +103,7 @@ nav {
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
-    transition: opacity 0.3s;
+    transition: opacity 0.4s;
 }
 
 .nav-links a:hover {
@@ -135,6 +135,12 @@ h1 {
 
 .feature {
     max-width: 200px;
+    padding: 1.5rem; /* Добавлено для отступов внутри стеклянного блока */
+    border-radius: var(--card-corner-radius);
+    background-color: rgba(255, 255, 255, 0.05); /* Стеклянный эффект как у FAQ */
+    backdrop-filter: blur(var(--card-bg-blur-amount));
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
+    box-shadow: var(--card-shadow);
 }
 
 .feature i {
@@ -211,7 +217,7 @@ h1 {
     font-size: 18px;
     font-weight: 500;
     color: #333333;
-    transition: color 0.4s ease; /* Ускорено с 0.3s до 0.4s для плавности */
+    transition: color 0.4s ease;
     display: flex;
     align-items: center;
 }
@@ -225,7 +231,7 @@ h1 {
     font-weight: bold;
     margin-right: 0.65em;
     color: #0088CC;
-    transition: color 0.4s ease; /* Ускорено с 0.3s до 0.4s */
+    transition: color 0.4s ease;
     min-width: 25px;
 }
 
@@ -240,7 +246,7 @@ h1 {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out; /* Ускорено с 0.3s до 0.4s */
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
     border-left: none;
     padding-left: 0;
     margin-left: 0;
@@ -250,9 +256,9 @@ h1 {
 .accordion-item.open .accordion-content {
     max-height: 500px;
     border-left: 2px solid #0088CC;
-    padding-left: 20px; /* Изменено на 20px */
+    padding-left: 20px;
     margin-left: 55px;
-    margin-top: 12px; /* Изменено на 12px */
+    margin-top: 12px;
 }
 
 .faq-content {
@@ -261,7 +267,7 @@ h1 {
     line-height: 1.6;
     font-size: 16px;
     opacity: 1;
-    transition: opacity 0.4s ease; /* Ускорено с 0.3s до 0.4s */
+    transition: opacity 0.4s ease;
 }
 
 @media (max-width: 768px) {
@@ -304,6 +310,9 @@ h1 {
     .accordion-icon {
         font-size: 1.5em;
     }
+    .feature {
+        padding: 1rem; /* Меньшие отступы для мобильных */
+    }
 }
 
 .download {
@@ -320,7 +329,7 @@ h1 {
     text-decoration: none;
     font-size: 28px;
     border-radius: 10px;
-    transition: background-color 0.4s; /* Ускорено с 0.3s до 0.4s */
+    transition: background-color 0.4s;
 }
 
 .big-download-btn:hover {
