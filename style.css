@@ -6,11 +6,16 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 1200px; /* Увеличено до 1200px */
+    --card-width: 850px; /* Изменено на 850px */
     --card-height: auto;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 15px; /* Увеличено для заметного стеклянного эффекта */
+    --card-bg-blur-amount: 15px;
+    --card-shadow: 
+        0 0 0.5rem 2px hsl(200 100% 50% / 35%), /* Цвет сайта #0088CC */
+        inset 0 0 0.1rem hsl(200 100% 50% / 20%),
+        inset 0 0 0.2rem 0.1rem hsl(200 100% 50% / 15%),
+        inset 0 0 0.3rem 0.2rem hsl(200 100% 50% / 10%);
 }
 
 *,
@@ -32,7 +37,7 @@ body {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 350px;
+    background-size: 400px; /* Изменено на 400px */
 }
 
 p {
@@ -155,10 +160,11 @@ h1 {
     min-height: var(--card-height);
     padding: var(--card-padding);
     border-radius: var(--card-corner-radius);
-    background-color: rgba(255, 255, 255, 0.05); /* Уменьшена непрозрачность для стекла */
+    background-color: rgba(255, 255, 255, 0.05);
     font-size: 125%;
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
+    box-shadow: var(--card-shadow); /* Добавлено для FAQ */
 }
 
 .faq-header {
