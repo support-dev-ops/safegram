@@ -20,7 +20,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #d7dee6; /* Новый цвет фона */
+    background-color: #d7dee6;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
@@ -51,16 +51,16 @@ nav {
 }
 
 .nav-links a {
-    color: #0088CC; /* Текст в nav голубой */
+    color: #0088CC;
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
-    transition: opacity 0.3s; /* Лёгкий hover для эффекта */
+    transition: opacity 0.3s;
 }
 
 .nav-links a:hover {
-    opacity: 0.8; /* Hover: лёгкое затемнение */
+    opacity: 0.8;
 }
 
 header {
@@ -116,53 +116,134 @@ h1 {
     color: #333333;
 }
 
-.download {
-    padding: 40px 20px 20px 20px;
-    margin-bottom: 0;
+/* FAQ Styles (адаптировано под SafeGram) */
+.faq-section {
+    padding: 40px 20px;
     position: relative;
     z-index: 1;
 }
 
-.big-download-btn {
-    background-color: #0088CC;
-    color: #FFFFFF;
-    padding: 20px 50px;
-    text-decoration: none;
-    font-size: 28px;
+.faq-body {
+    max-width: 55em; /* Компактно, как features */
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень, как у nav */
     border-radius: 10px;
-    transition: background-color 0.3s;
+    padding: 30px; /* Компактный padding */
+    background-color: #FFFFFF;
 }
 
-.big-download-btn:hover {
-    background-color: #006BB3;
+.faq-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-footer {
-    padding: 20px;
-    font-size: 14px;
-    color: #666666;
-    border-top: 1px solid #E0E0E0;
-    margin-top: auto;
-    background-color: #d7dee6; /* Новый цвет фона */
-    z-index: 1;
+.faq-title {
+    font-size: 28px; /* Уменьшено с 2em для баланса с h1 */
+    margin: 0.4em 0;
+    font-weight: 500;
+    color: #333333;
 }
 
-/* Ссылки в футере */
-footer a {
+.seperator {
+    width: 7.5em;
+    height: 0.17em;
+    background-color: #0088CC;
+    margin: 0 auto;
+}
+
+.faq-list {
+    max-width: 100%;
+    margin: 1em auto;
+    padding: 1em 0;
+}
+
+.faq-list > div {
+    border-bottom: 1px solid #E0E0E0;
+    padding: 1em 0; /* Компактный padding */
+}
+
+.faq-list > div:last-child {
+    border-bottom: none;
+}
+
+details > summary {
+    list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}
+
+summary {
+    font-size: 18px; /* Адаптивно под сайт */
+    font-weight: 500;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    transition: all 0.3s ease;
+    color: #333333;
+}
+
+summary:hover {
     color: #0088CC;
-    text-decoration: none;
-    margin: 0 10px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+details[open] summary ~ * {
+    animation: sweep 0.5s ease-in-out;
 }
 
-footer p {
-    margin: 5px 0 0;
+@keyframes sweep {
+    0% { opacity: 0; margin-left: -10px; }
+    100% { opacity: 1; margin-left: 40px; } /* Уменьшено для компактности */
 }
 
-/* Адаптивность */
+details[open] summary {
+    color: #0088CC;
+}
+
+details[open] p {
+    border-left: 2px solid #0088CC;
+    margin-left: 40px; /* Уменьшено */
+    padding-left: 20px; /* Уменьшено */
+    opacity: 1;
+    transition: all 0.3s ease;
+    color: #666666;
+    line-height: 1.6;
+    font-size: 16px; /* Стандартный размер текста */
+}
+
+details[open] summary:after {
+    content: "-";
+    font-size: 2.5em; /* Уменьшено */
+    margin: -25px 0.35em 0 0; /* Адаптировано */
+    font-weight: 200;
+    color: #0088CC;
+}
+
+summary:after {
+    background: transparent;
+    border-radius: 0.3em;
+    content: "+";
+    color: #0088CC;
+    float: left;
+    font-size: 1.5em; /* Уменьшено */
+    font-weight: bold;
+    margin: -0.3em 0.65em 0 0;
+    padding: 0;
+    text-align: center;
+    width: 25px;
+    transition: color 0.3s ease;
+}
+
+summary:hover:after {
+    color: #006BB3;
+}
+
+/* Адаптивность для мобильных */
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -190,4 +271,70 @@ footer p {
     .download {
         padding: 30px 10px 10px 10px;
     }
+    .faq-body {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    .faq-title {
+        font-size: 22px;
+    }
+    summary {
+        font-size: 16px;
+    }
+    details[open] p {
+        margin-left: 25px;
+        padding-left: 15px;
+    }
+    summary:after {
+        font-size: 1.3em;
+    }
+    details[open] summary:after {
+        font-size: 2em;
+        margin: -20px 0.35em 0 0;
+    }
+}
+
+.download {
+    padding: 40px 20px 20px 20px;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.big-download-btn {
+    background-color: #0088CC;
+    color: #FFFFFF;
+    padding: 20px 50px;
+    text-decoration: none;
+    font-size: 28px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.big-download-btn:hover {
+    background-color: #006BB3;
+}
+
+footer {
+    padding: 20px;
+    font-size: 14px;
+    color: #666666;
+    border-top: 1px solid #E0E0E0;
+    margin-top: auto;
+    background-color: #d7dee6;
+    z-index: 1;
+}
+
+footer a {
+    color: #0088CC;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0 0;
 }
