@@ -1,3 +1,13 @@
+:root {
+    --card-width: 55em;
+    --card-height: auto;
+    --card-padding: 30px;
+    --card-corner-radius: 10px;
+    --base-hue: 200; /* Синий тон для SafeGram */
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --card-bg-blur-amount: 10px;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -102,7 +112,22 @@ h1 {
     color: #333333;
 }
 
-/* FAQ Styles (на фоне body, без тени/фона) */
+/* Glassmorphism Card Styles */
+.card {
+    max-width: var(--card-width);
+    min-height: var(--card-height);
+    padding: var(--card-padding);
+    border-radius: var(--card-corner-radius);
+    background-color: hsl(var(--base-hue) 25% 95% / 45%);
+}
+
+.card--glass {
+    font-size: 125%;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(var(--card-bg-blur-amount));
+}
+
+/* FAQ Styles (на фоне body, с glassmorphism) */
 .faq-section {
     padding: 40px 20px;
     position: relative;
@@ -110,12 +135,9 @@ h1 {
 }
 
 .faq-body {
-    max-width: 55em;
+    max-width: var(--card-width); /* Подогнано под vars */
     margin: 0 auto;
-    padding: 30px 0; /* Только вертикальный padding, без бокового */
-    background-color: transparent; /* Полностью прозрачный */
-    border-radius: 0; /* Без скруглений */
-    box-shadow: none; /* Без тени */
+    /* Glassmorphism уже в class="card card--glass" */
 }
 
 .faq-header {
@@ -144,13 +166,12 @@ h1 {
 }
 
 .accordion-item {
-    border-bottom: 1px solid #E0E0E0;
+    /* border-bottom удалена */
     margin-bottom: 1em;
-    overflow: hidden; /* Скрывает контент при закрытии */
+    overflow: hidden;
 }
 
 .accordion-item:last-child {
-    border-bottom: none;
     margin-bottom: 0;
 }
 
@@ -193,14 +214,14 @@ h1 {
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Плавный transition */
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     border-left: none;
     padding-left: 0;
     margin-left: 0;
 }
 
 .accordion-item.open .accordion-content {
-    max-height: 500px; /* Достаточно для длинного текста, плавно растягивается */
+    max-height: 500px;
     border-left: 2px solid #0088CC;
     padding-left: 25px;
     margin-left: 55px;
@@ -238,7 +259,8 @@ h1 {
         height: 50px;
     }
     .faq-body {
-        padding: 20px 0;
+        --card-padding: 20px; /* Адаптивно уменьшен padding */
+        padding: var(--card-padding);
     }
     .faq-title {
         font-size: 22px;
