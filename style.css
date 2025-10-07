@@ -1,20 +1,18 @@
 :root {
-    --base-hue: 260; /* Фиолетовый, как в исходнике */
-    --font-family: 'Roboto', sans-serif; /* Твой шрифт */
+    --base-hue: 260;
+    --font-family: 'Roboto', sans-serif;
     --leading: 1.5;
     
-    /* Общие цвета (не меняют body) */
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    /* Card vars (адаптировано под FAQ) */
-    --card-width: 800px; /* Увеличено с 500px */
+    --card-width: 1000px; /* Увеличено с 800px */
     --card-height: auto;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 10px; /* Увеличен для заметного эффекта */
+    --card-bg-blur-amount: 12px; /* Увеличено для заметного стеклянного эффекта */
     --card-shadow: 
-        0 0 0.5rem 2px hsl(200 100% 50% / 35%), /* Цвет сайта #0088CC */
+        0 0 0.5rem 2px hsl(200 100% 50% / 35%),
         inset 0 0 0.1rem hsl(200 100% 50% / 20%),
         inset 0 0 0.2rem 0.1rem hsl(200 100% 50% / 15%),
         inset 0 0 0.3rem 0.2rem hsl(200 100% 50% / 10%);
@@ -62,18 +60,18 @@ p:not(:last-child) {
     min-height: var(--card-height);
     padding: var(--card-padding);
     border-radius: var(--card-corner-radius);
-    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый для стекла */
+    background-color: rgba(255, 255, 255, 0.1); /* Уменьшена непрозрачность для стекла */
 }
 
 .card--glass {
     font-size: 125%;
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
-    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount)); /* Для Safari */
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
 }
 
 .card-footer {
-    margin-top: 10rem;
+    margin-top: 1rem; /* Изменено с 10rem */
     font-size: 0.75rem;
     opacity: 75%;
     color: #666666;
@@ -177,11 +175,10 @@ h1 {
     min-height: var(--card-height);
     padding: var(--card-padding);
     border-radius: var(--card-corner-radius);
-    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый для стекла */
+    background-color: rgba(255, 255, 255, 0.1); /* Уменьшена непрозрачность для стекла */
     font-size: 125%;
-    box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
-    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount)); /* Для Safari */
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
 }
 
 .faq-header {
