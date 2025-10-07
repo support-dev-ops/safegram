@@ -14,9 +14,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px; /* Уменьшен верхний паддинг с 20px до 10px */
-    background-color: #F5F5F5;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень у nav */
+    padding: 10px 40px;
+    background-color: #F5F5F5; /* Цвет как у footer */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
     position: relative;
     z-index: 1;
 }
@@ -50,7 +50,7 @@ nav {
     text-decoration: none;
     font-size: 16px;
     font-weight: 500;
-    text-transform: uppercase; /* Заглавные буквы */
+    text-transform: uppercase;
     transition: color 0.3s;
 }
 
@@ -65,7 +65,7 @@ header {
     background-image: url('background-pattern.jpg');
     background-repeat: repeat;
     background-position: center;
-    background-size: 350px; /* Увеличен до 350px */
+    background-size: 350px;
 }
 
 h1 {
@@ -120,7 +120,8 @@ h1 {
 }
 
 .download {
-    padding: 80px 20px;
+    padding: 40px 20px 20px 20px; /* Уменьшен нижний padding до 20px, чтобы убрать прослойку */
+    margin-bottom: 0; /* Убирает лишний margin */
     position: relative;
     z-index: 1;
     background-image: url('background-pattern.jpg');
@@ -148,8 +149,8 @@ footer {
     font-size: 14px;
     color: #666666;
     border-top: 1px solid #E0E0E0;
-    margin-top: auto; /* Прижатие футера */
-    background-color: #F5F5F5;
+    margin-top: auto;
+    background-color: #F5F5F5; /* Цвет как у nav */
     z-index: 1;
 }
 
@@ -192,5 +193,8 @@ footer p {
     }
     .logo {
         height: 50px;
+    }
+    .download {
+        padding: 30px 10px 10px 10px; /* Адаптивно уменьшен padding */
     }
 }
