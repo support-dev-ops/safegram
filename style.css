@@ -144,7 +144,7 @@ h1 {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрирование для текста */
+    align-items: flex-start; /* Восстановлено выравнивание слева */
     height: var(--card-height);
     width: var(--card-width);
     background-color: rgba(255, 255, 255, 0.05); /* Стеклянный эффект */
@@ -152,7 +152,7 @@ h1 {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1); /* Мягкая и быстрая анимация */
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); /* Более плавная анимация */
     position: relative;
     left: 0;
     will-change: transform, left; /* Оптимизация */
@@ -164,13 +164,13 @@ h1 {
 
 .card:hover {
     transform: translateY(-20px);
-    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .card:hover ~ .card {
     position: relative;
     left: 50px;
-    transition: left 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: left 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
     transition-delay: 0.05s; /* Минимальная задержка для мягкости */
 }
 
@@ -178,7 +178,7 @@ h1 {
     color: #333333;
     font-weight: 500;
     font-size: 18px;
-    margin: 15px 20px;
+    margin: 15px 20px; /* Прижато слева */
 }
 
 .bar {
@@ -205,7 +205,7 @@ h1 {
     width: 0;
     height: 100%;
     background: linear-gradient(90deg, #004B7F 0%, #0088CC 100%);
-    transition: width 0.4s ease-out; /* Ускоренная анимация */
+    transition: width 0.4s ease-out;
 }
 
 .card:hover .emptybar::before {
@@ -222,21 +222,21 @@ h1 {
 
 .feature-text {
     position: absolute;
-    top: 180px; /* Под градиентной линией */
+    top: 225px; /* Под градиентной линией */
     left: 0;
     right: 0;
     margin: 0;
-    font-size: 20px; /* Чуть больше */
+    font-size: 20px;
     color: #333333;
     text-align: center;
     opacity: 0;
     max-height: 0;
-    transition: opacity 0.4s ease-out, max-height 0.4s ease-out; /* Ускоренная анимация */
+    transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
 }
 
 .card:hover .feature-text {
     opacity: 1;
-    max-height: 60px; /* Увеличено для большего текста */
+    max-height: 60px;
 }
 
 .faq-section {
@@ -394,7 +394,7 @@ h1 {
         top: 70px; /* Корректировка для мобильных */
     }
     .feature-text {
-        top: 170px; /* Корректировка для мобильных */
+        top: 215px; /* Корректировка для мобильных */
     }
     .logo {
         height: 50px;
