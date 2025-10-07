@@ -6,7 +6,8 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-height: 280px; /* Фиксированная высота как в исходнике */
+    --card-width: 270px; /* Новая ширина карт */
+    --card-height: 390px; /* Новая высота карт */
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
     --card-bg-blur-amount: 10px;
@@ -137,27 +138,27 @@ h1 {
     width: 950px; /* Фиксированная ширина для четырёх карт */
     display: flex;
     justify-content: center;
-    gap: 0; /* Отступы через margin-left в .card */
+    gap: 0;
 }
 
 .card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: var(--card-height);
-    width: 200px;
+    height: var(--card-height); /* 390px */
+    width: var(--card-width); /* 270px */
     background-color: rgba(255, 255, 255, 0.05); /* Стеклянный эффект */
     border-radius: var(--card-corner-radius);
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.4s ease-out;
+    transition: transform 0.4s ease-out, left 0.4s ease-out; /* Добавлено left для плавного возврата */
     position: relative;
     left: 0;
 }
 
 .card:not(:first-child) {
-    margin-left: -50px; /* Наложение карт как в исходнике */
+    margin-left: -50px; /* Наложение карт */
 }
 
 .card:hover {
@@ -172,7 +173,7 @@ h1 {
 }
 
 .title {
-    color: #333333; /* Цвет текста сайта */
+    color: #333333;
     font-weight: 500;
     font-size: 18px;
     margin: 15px 20px;
@@ -181,11 +182,11 @@ h1 {
 .bar {
     margin: 80px 20px 0;
     height: 5px;
-    width: 150px;
+    width: 230px; /* Увеличено для более широких карт */
 }
 
 .emptybar {
-    background-color: #d7dee6; /* Цвет фона сайта */
+    background-color: #d7dee6;
     width: 100%;
     height: 100%;
 }
@@ -196,32 +197,45 @@ h1 {
     z-index: 3;
     width: 0;
     height: 100%;
-    background: #0088CC; /* Цвет сайта */
-    transition: width 0.4s ease-out;
+    background: linear-gradient(90deg, #0088CC 0%, #006BB3 100%); /* Градиент с цветом сайта */
+    transition: width 0.6s ease-out;
 }
 
 .card:hover .filledbar {
-    width: 120px;
-    transition: width 0.4s ease-out;
+    width: 200px; /* Увеличено для более широких карт */
+    transition: width 0.6s ease-out;
 }
 
 .content {
+    position: relative;
     margin: 20px 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center; /* Центрирование иконки */
+    width: 100%;
 }
 
 .content i {
     font-size: 50px;
     color: #0088CC;
-    margin-bottom: 15px;
+    position: absolute;
+    top: -70px; /* Иконка над полоской */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .content p {
     margin: 0;
     font-size: 18px;
     color: #333333;
+    opacity: 0; /* Скрыт по умолчанию */
+    max-height: 0; /* Скрыт по умолчанию */
+    transition: opacity 0.6s ease-out, max-height 0.6s ease-out; /* Плавное появление */
+}
+
+.card:hover .content p {
+    opacity: 1;
+    max-height: 50px; /* Появление текста */
 }
 
 .faq-section {
@@ -357,17 +371,23 @@ h1 {
         padding: 40px 10px;
     }
     .container {
-        width: 100%; /* Адаптивная ширина для мобильных */
+        width: 100%;
         flex-direction: column;
         align-items: center;
     }
     .card {
         width: 90%;
-        margin-left: 0 !important; /* Убираем наложение на мобильных */
+        margin-left: 0 !important;
         margin-bottom: 20px;
     }
     .card:hover ~ .card {
-        left: 0; /* Отключаем сдвиг на мобильных */
+        left: 0;
+    }
+    .bar {
+        width: 80%; /* Адаптивная ширина полоски */
+    }
+    .card:hover .filledbar {
+        width: 70%; /* Адаптивная ширина полоски при наведении */
     }
     .logo {
         height: 50px;
