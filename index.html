@@ -38,66 +38,69 @@
         </div>
     </section>
     <section class="faq-section">
-        <div id="faq" class="faq-body card card--glass">
-            <div class="faq-header">
-                <h3 class="faq-title">FAQ</h3>
-                <div class="seperator"></div>
-            </div>
-            <div class="faq-list">
-                <div class="accordion-item open">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">-</span>
-                        <span class="accordion-question">Как установить SafeGram?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Скачайте exe-файл с сайта, запустите и следуйте инструкциям. SafeGram совместим с Windows 10/11. Установка занимает менее 5 минут, и вы сразу получаете защищённый клиент Telegram.</p>
+        <div class="site-container">
+            <div id="faq" class="faq-body card card--glass">
+                <div class="faq-header">
+                    <h3 class="faq-title">FAQ</h3>
+                    <div class="seperator"></div>
+                </div>
+                <div class="faq-list">
+                    <div class="accordion-item open">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">-</span>
+                            <span class="accordion-question">Как установить SafeGram?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Скачайте exe-файл с сайта, запустите и следуйте инструкциям. SafeGram совместим с Windows 10/11. Установка занимает менее 5 минут, и вы сразу получаете защищённый клиент Telegram.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">+</span>
+                            <span class="accordion-question">Что такое защита tdata?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Папка tdata содержит сессию вашего аккаунта. SafeGram шифрует её с помощью DPAPI (Windows Data Protection API), привязывая к вашему устройству. Украденные файлы бесполезны на другом ПК.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">+</span>
+                            <span class="accordion-question">Работает ли SafeGram с 2FA?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Да, SafeGram полностью поддерживает двухфакторную аутентификацию Telegram. Защита tdata дополняет 2FA, делая кражу сессии невозможной даже без неё.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">+</span>
+                            <span class="accordion-question">Как перенести данные на новый ПК?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Из-за привязки к устройству сессия не переносится. Просто войдите заново — это быстро и безопасно. Рекомендуем использовать облачную 2FA для восстановления.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">+</span>
+                            <span class="accordion-question">Почему SafeGram безопаснее официального?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Официальный Telegram шифрует tdata опционально (локальный пароль), но не привязывает к железу. SafeGram добавляет обязательное DPAPI-шифрование, делая кражу бесполезной.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-summary">
+                            <span class="accordion-icon">+</span>
+                            <span class="accordion-question">Поддерживает ли SafeGram кастомные темы?</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="faq-content">Да, SafeGram основан на tdesktop, так что все темы, стикеры и фичи Telegram работают. Плюс, вы можете добавить свои модификации.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">+</span>
-                        <span class="accordion-question">Что такое защита tdata?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Папка tdata содержит сессию вашего аккаунта. SafeGram шифрует её с помощью DPAPI (Windows Data Protection API), привязывая к вашему устройству. Украденные файлы бесполезны на другом ПК.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">+</span>
-                        <span class="accordion-question">Работает ли SafeGram с 2FA?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Да, SafeGram полностью поддерживает двухфакторную аутентификацию Telegram. Защита tdata дополняет 2FA, делая кражу сессии невозможной даже без неё.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">+</span>
-                        <span class="accordion-question">Как перенести данные на новый ПК?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Из-за привязки к устройству сессия не переносится. Просто войдите заново — это быстро и безопасно. Рекомендуем использовать облачную 2FA для восстановления.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">+</span>
-                        <span class="accordion-question">Почему SafeGram безопаснее официального?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Официальный Telegram шифрует tdata опционально (локальный пароль), но не привязывает к железу. SafeGram добавляет обязательное DPAPI-шифрование, делая кражу бесполезной.</p>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <button class="accordion-summary">
-                        <span class="accordion-icon">+</span>
-                        <span class="accordion-question">Поддерживает ли SafeGram кастомные темы?</span>
-                    </button>
-                    <div class="accordion-content">
-                        <p class="faq-content">Да, SafeGram основан на tdesktop, так что все темы, стикеры и фичи Telegram работают. Плюс, вы можете добавить свои модификации.</p>
-                    </div>
-                </div>
+                <p class="card-footer">© 2025 SafeGram</p>
             </div>
         </div>
     </section>
