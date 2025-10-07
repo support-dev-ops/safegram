@@ -180,35 +180,25 @@ h1 {
 }
 
 .bar {
-    margin: 80px 20px 0;
+    margin: 100px 20px 0; /* Сдвинут ниже для иконки под заголовком */
     height: 5px;
     width: 230px;
 }
 
 .emptybar {
-    background-color: #a6adb8; /* Более тёмный оттенок (hsl(214 16% 69%)) */
+    background-color: #a6adb8; /* Тёмный оттенок */
     width: 100%;
     height: 100%;
+    transition: background 0.8s ease-out; /* Плавная заливка градиентом */
 }
 
-.filledbar {
-    position: absolute;
-    top: 0;
-    z-index: 3;
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #0088CC 0%, #006BB3 100%);
-    transition: width 0.6s ease-out;
-}
-
-.card:hover .filledbar {
-    width: 200px;
-    transition: width 0.6s ease-out;
+.card:hover .emptybar {
+    background: linear-gradient(90deg, #0088CC 0%, #006BB3 100%); /* Градиент при наведении */
 }
 
 .content {
     position: relative;
-    margin: 100px 20px 0;
+    margin: 120px 20px 0; /* Отступ для размещения под полоской */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -220,12 +210,6 @@ h1 {
     color: #0088CC;
     margin-top: 10px;
     margin-bottom: -10px; /* Наезд на линию */
-    opacity: 0.3;
-    transition: opacity 0.6s ease-out; /* Плавность как у круга в исходнике */
-}
-
-.card:hover .content i {
-    opacity: 1;
 }
 
 .content p {
@@ -390,7 +374,7 @@ h1 {
     .bar {
         width: 80%;
     }
-    .card:hover .filledbar {
+    .card:hover .emptybar {
         width: 70%;
     }
     .logo {
