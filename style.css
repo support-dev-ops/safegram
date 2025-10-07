@@ -1,6 +1,6 @@
 :root {
-    --base-hue: 200; /* Синий тон для SafeGram */
-    --font-family: 'Roboto', sans-serif;
+    --base-hue: 260; /* Фиолетовый, как в исходнике */
+    --font-family: 'Roboto', sans-serif; /* Твой шрифт */
     --leading: 1.5;
     
     /* Общие цвета (не меняют body) */
@@ -8,12 +8,12 @@
     --bg-img-url: ur[](https://i.ibb.co/Qjt7TJn/milad-fakurian-E8-Ufcyxz514-unsplash-1.jpg);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    /* Card vars (подогнано под FAQ) */
-    --card-width: 55em;
-    --card-height: auto;
-    --card-padding: 30px;
-    --card-corner-radius: 10px;
-    --card-bg-blur-amount: 10px;
+    /* Card vars (как в исходнике, подогнано под FAQ) */
+    --card-width: 500px; /* 500px, как в примере */
+    --card-height: auto; /* Авто */
+    --card-padding: 2.25rem; /* 36px */
+    --card-corner-radius: 1.5rem; /* 24px */
+    --card-bg-blur-amount: 1rem; /* 16px */
     --card-shadow: 
         0 0 0.5rem 2px hsl(var(--base-hue) 25% 25% / 35%),
         inset 0 0 0.1rem hsl(var(--base-hue) 75% 40% / 20%),
@@ -27,12 +27,36 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font: 1em/var(--leading) var(--font-family), sans-serif;
+    color: var(--text-color);
+    background-color: #FFFFFF;
+    text-align: center;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Фон по всему body (твой паттерн, не меняем) */
+    background-image: url('background-pattern.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 350px;
+}
+
 p {
     margin: 0;
 }
 
 p:not(:last-child) {
     margin-bottom: 1.5rem;
+}
+
+.site-container {
+    min-height: auto; /* Для FAQ, не полная высота */
+    padding: 2rem; /* Как в примере */
+    display: grid;
+    place-items: center; /* Центрирование */
 }
 
 .card {
@@ -53,23 +77,7 @@ p:not(:last-child) {
     margin-top: 10rem;
     font-size: 0.75rem;
     opacity: 75%;
-}
-
-body {
-    margin: 0;
-    font: 1em/var(--leading) var(--font-family), sans-serif;
-    color: var(--text-color);
-    background-color: #FFFFFF;
-    text-align: center;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* Фон по всему body */
-    background-image: url('background-pattern.jpg');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: 350px;
+    color: #666666; /* Адаптировано под SafeGram */
 }
 
 nav {
@@ -167,7 +175,7 @@ h1 {
 }
 
 .faq-body {
-    /* Glassmorphism уже в class="card card--glass" */
+    /* Glassmorphism из .card .card--glass */
 }
 
 .faq-header {
@@ -196,7 +204,6 @@ h1 {
 }
 
 .accordion-item {
-    /* border-bottom удалена */
     margin-bottom: 1em;
     overflow: hidden;
 }
@@ -288,9 +295,11 @@ h1 {
     .logo {
         height: 50px;
     }
-    .faq-body {
-        --card-padding: 20px;
-        padding: var(--card-padding);
+    .site-container {
+        padding: 1rem; /* Уменьшено для мобильных */
+    }
+    .card {
+        --card-padding: 1.5rem; /* Адаптивно */
     }
     .faq-title {
         font-size: 22px;
