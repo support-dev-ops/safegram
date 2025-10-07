@@ -152,7 +152,7 @@ h1 {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.4s ease-out, left 0.4s ease-out;
+    transition: transform 0.4s ease-out, left 0.4s ease-out; /* Плавность из исходника */
     position: relative;
     left: 0;
 }
@@ -180,25 +180,36 @@ h1 {
 }
 
 .bar {
-    margin: 100px 20px 0; /* Сдвинут ниже для иконки под заголовком */
+    margin: 60px 20px 0; /* Сдвинуто выше для иконки под заголовком */
     height: 5px;
     width: 230px;
 }
 
 .emptybar {
-    background-color: #a6adb8; /* Тёмный оттенок */
+    background-color: #a6adb8;
     width: 100%;
     height: 100%;
-    transition: background 0.8s ease-out; /* Плавная заливка градиентом */
+    position: relative;
+    overflow: hidden;
 }
 
-.card:hover .emptybar {
-    background: linear-gradient(90deg, #0088CC 0%, #006BB3 100%); /* Градиент при наведении */
+.emptybar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #004B7F 0%, #0088CC 100%); /* От тёмно-синего к светло-синему */
+    transition: width 0.6s ease-out; /* Плавность из исходника */
+}
+
+.card:hover .emptybar::before {
+    width: 200px; /* Не до конца, как в исходнике (120px из 150px) */
 }
 
 .content {
-    position: relative;
-    margin: 120px 20px 0; /* Отступ для размещения под полоской */
+    margin: 10px 20px 0; /* Под заголовком и полоской */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -218,7 +229,7 @@ h1 {
     color: #333333;
     opacity: 0;
     max-height: 0;
-    transition: opacity 0.6s ease-out, max-height 0.6s ease-out;
+    transition: opacity 0.6s ease-out, max-height 0.6s ease-out; /* Плавность из исходника */
 }
 
 .card:hover .content p {
@@ -374,7 +385,7 @@ h1 {
     .bar {
         width: 80%;
     }
-    .card:hover .emptybar {
+    .card:hover .emptybar::before {
         width: 70%;
     }
     .logo {
