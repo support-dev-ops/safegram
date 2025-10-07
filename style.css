@@ -8,6 +8,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    /* Фон по всему body */
+    background-image: url('background-pattern.jpg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 350px;
 }
 
 nav {
@@ -15,7 +20,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #F5F5F5; /* Цвет как у footer */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый, чтобы слиться с фоном */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
     position: relative;
     z-index: 1;
@@ -62,10 +67,7 @@ header {
     padding: 60px 20px;
     position: relative;
     z-index: 1;
-    background-image: url('background-pattern.jpg');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: 350px;
+    /* Фон наследуется от body, убираем дубликат */
 }
 
 h1 {
@@ -97,10 +99,7 @@ h1 {
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
-    background-image: url('background-pattern.jpg');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: 350px;
+    /* Фон наследуется от body, убираем дубликат */
 }
 
 .feature {
@@ -120,14 +119,11 @@ h1 {
 }
 
 .download {
-    padding: 40px 20px 20px 20px; /* Уменьшен нижний padding до 20px, чтобы убрать прослойку */
-    margin-bottom: 0; /* Убирает лишний margin */
+    padding: 40px 20px 20px 20px;
+    margin-bottom: 0;
     position: relative;
     z-index: 1;
-    background-image: url('background-pattern.jpg');
-    background-repeat: repeat;
-    background-position: center;
-    background-size: 350px;
+    /* Фон наследуется от body, убираем дубликат */
 }
 
 .big-download-btn {
@@ -150,7 +146,7 @@ footer {
     color: #666666;
     border-top: 1px solid #E0E0E0;
     margin-top: auto;
-    background-color: #F5F5F5; /* Цвет как у nav */
+    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый, чтобы слиться с фоном */
     z-index: 1;
 }
 
@@ -195,6 +191,6 @@ footer p {
         height: 50px;
     }
     .download {
-        padding: 30px 10px 10px 10px; /* Адаптивно уменьшен padding */
+        padding: 30px 10px 10px 10px;
     }
 }
