@@ -491,7 +491,7 @@ h2 {
     }
     .header-content {
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
     }
     .header-shield-icon {
         font-size: 36px;
