@@ -139,8 +139,17 @@ nav {
     }
 }
 
+.feature-text a .underline {
+    transition: color 0.4s ease;
+}
+
 .feature-text a .underline:hover {
     opacity: 0.8;
+    color: #006BB3;
+}
+
+.feature-text a .underline:hover::before {
+    background-color: #006BB3;
 }
 
 header {
@@ -311,7 +320,7 @@ h2 {
 }
 
 .support-section {
-    padding: 40px 20px;
+    padding: 40px 20px 120px 20px;
     position: relative;
     z-index: 1;
 }
@@ -383,11 +392,12 @@ h2 {
 
 .char-counter {
     position: absolute;
-    bottom: 5px;
-    right: 10px;
+    bottom: 12px;
+    right: 12px;
     font-size: 12px;
     color: #666666;
     display: none;
+    font-weight: 500;
 }
 
 .submit-btn {
