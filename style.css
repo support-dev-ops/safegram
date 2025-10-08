@@ -6,11 +6,11 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 270px;
+    --card-width: 272px; /* Увеличено с 270px */
     --card-height: 390px;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 10px;
+    --card-bg-blur-amount: 12px; /* Увеличено с 10px */
     --card-shadow: 
         0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Цвет #b0b7c2 */
         inset 0 0 0.1rem hsl(214 16% 74% / 20%),
@@ -105,10 +105,34 @@ nav {
     font-weight: 500;
     text-transform: uppercase;
     transition: opacity 0.4s;
+    position: relative;
 }
 
 .nav-links a:hover {
     opacity: 0.8;
+}
+
+.underline {
+    position: relative;
+}
+
+.underline::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0088CC; /* Цвет подчёркивания в стиле проекта */
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .underline:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
 }
 
 header {
@@ -119,8 +143,15 @@ header {
 
 h1 {
     font-size: 32px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     font-weight: 500;
+    color: #333333;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 400;
     color: #333333;
 }
 
@@ -144,18 +175,19 @@ h1 {
 .card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Восстановлено выравнивание слева */
+    align-items: flex-start;
     height: var(--card-height);
-    width: var(--card-width);
-    background-color: rgba(255, 255, 255, 0.05); /* Стеклянный эффект */
+    width: var(--card-width); /* 272px */
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--card-corner-radius);
     box-shadow: var(--card-shadow);
-    backdrop-filter: blur(var(--card-bg-blur-amount));
+    backdrop-filter: blur(var(--card-bg-blur-amount)); /* 12px */
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1); /* Более плавная анимация */
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transform: translateY(0); /* Базовое состояние */
     position: relative;
     left: 0;
-    will-change: transform, left; /* Оптимизация */
+    will-change: transform, left;
 }
 
 .card:not(:first-child) {
@@ -164,33 +196,33 @@ h1 {
 
 .card:hover {
     transform: translateY(-20px);
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .card:hover ~ .card {
     position: relative;
     left: 50px;
-    transition: left 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-delay: 0.05s; /* Минимальная задержка для мягкости */
+    transition: left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-delay: 0.1s;
 }
 
 .title {
     color: #333333;
     font-weight: 500;
     font-size: 18px;
-    margin: 15px 20px; /* Прижато слева */
+    margin: 15px 20px;
 }
 
 .bar {
     position: absolute;
-    top: 150px; /* Для иконки над полоской */
+    top: 150px;
     left: 20px;
     height: 5px;
     width: 230px;
 }
 
 .emptybar {
-    background-color: #b8bfc8; /* Светлый оттенок */
+    background-color: #b8bfc8;
     width: 100%;
     height: 100%;
     position: relative;
@@ -209,12 +241,12 @@ h1 {
 }
 
 .card:hover .emptybar::before {
-    width: 200px; /* Не до конца */
+    width: 200px;
 }
 
 .feature-icon {
     position: absolute;
-    top: 80px; /* Между h3 и линией */
+    top: 80px;
     left: 20px;
     font-size: 50px;
     color: #0088CC;
@@ -222,7 +254,7 @@ h1 {
 
 .feature-text {
     position: absolute;
-    top: 225px; /* Под градиентной линией */
+    top: 225px;
     left: 0;
     right: 0;
     margin: 0;
@@ -252,7 +284,7 @@ h1 {
     border-radius: var(--card-corner-radius);
     background-color: rgba(255, 255, 255, 0.05);
     font-size: 125%;
-    backdrop-filter: blur(var(--card-bg-blur-amount));
+    backdrop-filter: blur(var(--card-bg-blur-amount)); /* 12px */
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
     box-shadow: var(--card-shadow);
 }
@@ -367,6 +399,9 @@ h1 {
     h1 {
         font-size: 24px;
     }
+    h2 {
+        font-size: 18px;
+    }
     .features {
         flex-direction: column;
         padding: 40px 10px;
@@ -391,10 +426,10 @@ h1 {
         width: 70%;
     }
     .feature-icon {
-        top: 70px; /* Корректировка для мобильных */
+        top: 70px;
     }
     .feature-text {
-        top: 215px; /* Корректировка для мобильных */
+        top: 215px;
     }
     .logo {
         height: 50px;
