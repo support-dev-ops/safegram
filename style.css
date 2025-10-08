@@ -184,6 +184,7 @@ h2 {
     margin: 0;
     font-weight: 550;
     color: #333333;
+    font-family: 'Rubik', sans-serif;
 }
 
 .features {
@@ -363,6 +364,7 @@ h2 {
     background-color: rgba(255, 255, 255, 0.1);
     color: #333333;
     font-family: var(--font-family);
+    width: 100%;
 }
 
 .support-form input::placeholder,
@@ -664,7 +666,7 @@ h2 {
 }
 
 footer {
-    padding: 20px;
+    padding: 10px;
     font-size: 14px;
     color: #666666;
     border-top: 2px solid hsl(214 16% 74%);
