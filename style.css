@@ -142,19 +142,19 @@ header {
 }
 
 h1 {
-    font-size: 40px; /* Увеличено с 32px */
+    font-size: 40px;
     margin: 0 0 10px;
-    font-weight: 700; /* Увеличена жирность с 500 */
+    font-weight: 700;
     color: #333333;
-    text-transform: uppercase; /* Капс */
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 28px; /* Увеличено с 24px */
+    font-size: 28px;
     margin: 0;
-    font-weight: 500; /* Увеличена жирность с 400 */
+    font-weight: 500;
     color: #333333;
-    text-transform: uppercase; /* Капс */
+    text-transform: uppercase;
 }
 
 .features {
@@ -179,13 +179,13 @@ h2 {
     flex-direction: column;
     align-items: flex-start;
     height: var(--card-height);
-    width: var(--card-width); /* 272px */
+    width: var(--card-width);
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--card-corner-radius);
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1), left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1); /* Добавлен left для плавного возврата */
     transform: translateY(0);
     position: relative;
     left: 0;
@@ -205,7 +205,7 @@ h2 {
     position: relative;
     left: 50px;
     transition: left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-delay: 0.1s;
+    transition-delay: 0.15s; /* Увеличено с 0.1s для мягкости */
 }
 
 .title {
@@ -399,10 +399,10 @@ h2 {
         gap: 10px;
     }
     h1 {
-        font-size: 28px; /* Увеличено с 24px */
+        font-size: 28px;
     }
     h2 {
-        font-size: 20px; /* Увеличено с 18px */
+        font-size: 20px;
     }
     .features {
         flex-direction: column;
