@@ -19,7 +19,7 @@
         <ul class="nav-links">
             <li><a href="#" class="underline">FEATURES</a></li>
             <li><a href="#faq" class="underline">FAQ</a></li>
-            <li><a href="#" class="underline">SUPPORT</a></li>
+            <li><a href="#support" class="underline">SUPPORT</a></li>
         </ul>
     </nav>
     <header>
@@ -78,6 +78,25 @@
             <i class="fab fa-windows"></i>
             <span><span class="small-text">Download on the</span><br><span class="windows-text">Windows</span></span>
         </a>
+    </section>
+    <section class="support-section" id="support">
+        <div class="site-container">
+            <div class="support-body">
+                <div class="support-header">
+                    <h3 class="support-title">Support</h3>
+                    <div class="seperator"></div>
+                </div>
+                <p class="support-text">Have any questions? Find your answers in SafeGram FAQ or ask us directly</p>
+                <form class="support-form">
+                    <input type="text" name="username" placeholder="@username" required pattern="@[A-Za-z0-9_]{3,}" title="Username must start with @ and be at least 4 characters long">
+                    <div class="textarea-container">
+                        <textarea name="message" placeholder="Your Message" rows="5" required maxlength="500"></textarea>
+                        <span class="char-counter">0/500</span>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
     </section>
     <section class="faq-section" id="faq">
         <div class="site-container">
@@ -149,15 +168,9 @@
     <footer>
         <div class="social-icons">
             <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <span class="separator"> | </span>
             <a href="https://t.me" target="_blank"><i class="fab fa-telegram"></i></a>
-            <span class="separator"> | </span>
             <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <span class="separator"> | </span>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <span class="separator"> | </span>
             <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
-            <span class="separator"> | </span>
             <a href="https://reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
         </div>
         <p>© 2025 SafeGram</p>
@@ -188,7 +201,7 @@
             });
         });
 
-        document.querySelectorAll('a[href="#faq"]').forEach(anchor => {
+        document.querySelectorAll('a[href="#faq"], a[href="#support"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
                 const target = document.querySelector(anchor.getAttribute('href'));
@@ -196,6 +209,15 @@
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
                 window.scrollTo({ top: targetPosition, behavior: 'smooth' });
             });
+        });
+
+        const textarea = document.querySelector('.support-form textarea');
+        const charCounter = document.querySelector('.char-counter');
+        textarea.addEventListener('input', () => {
+            const charCount = textarea.value.length;
+            charCounter.textContent = `${charCount}/500`;
+            charCounter.style.display = charCount > 0 ? 'block' : 'none';
+            charCounter.style.color = charCount === 500 ? '#FF0000' : '#666666';
         });
     </script>
 </body>
