@@ -148,6 +148,7 @@ header {
 .header-content {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .header-icon {
@@ -156,7 +157,7 @@ header {
 }
 
 .header-shield-icon {
-    font-size: 50px;
+    font-size: 45px;
     color: #0088CC;
     vertical-align: middle;
 }
@@ -288,6 +289,16 @@ h2 {
     transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.feature-text a {
+    color: #333333;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.feature-text a:hover {
+    color: #0088CC;
 }
 
 .card:hover .feature-text {
@@ -480,9 +491,10 @@ h2 {
     }
     .header-content {
         flex-direction: column;
+        gap: 5px;
     }
     .header-shield-icon {
-        font-size: 40px;
+        font-size: 36px;
     }
 }
 
