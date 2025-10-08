@@ -309,6 +309,100 @@ h2 {
     max-height: 60px;
 }
 
+.support-section {
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.support-body {
+    width: 950px;
+    min-height: var(--card-height);
+    padding: var(--card-padding);
+    border-radius: var(--card-corner-radius);
+    background-color: rgba(255, 255, 255, 0.05);
+    font-size: 125%;
+    backdrop-filter: blur(var(--card-bg-blur-amount));
+    -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.support-title {
+    font-size: 28px;
+    margin: 0.4em 0;
+    font-weight: 500;
+    color: #333333;
+}
+
+.support-text {
+    font-size: 18px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.support-form input,
+.support-form textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccd3dd;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #333333;
+    font-family: var(--font-family);
+}
+
+.support-form input::placeholder,
+.support-form textarea::placeholder {
+    color: #666666;
+}
+
+.support-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.textarea-container {
+    position: relative;
+}
+
+.char-counter {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 12px;
+    color: #666666;
+    display: none;
+}
+
+.submit-btn {
+    background-color: #0088CC;
+    color: #FFFFFF;
+    padding: 10px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+
+.submit-btn:hover {
+    background-color: #006BB3;
+}
+
 .faq-section {
     padding: 40px 20px;
     position: relative;
@@ -424,12 +518,6 @@ h2 {
     transition: opacity 0.4s ease;
 }
 
-.separator {
-    color: #0088CC;
-    margin: 0 10px;
-    font-size: 24px;
-}
-
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -481,12 +569,33 @@ h2 {
     .site-container {
         padding: 1rem;
     }
+    .support-body,
     .faq-body {
         --card-padding: 1.5rem;
         width: 100%;
     }
+    .support-title,
     .faq-title {
         font-size: 22px;
+    }
+    .support-text {
+        font-size: 16px;
+    }
+    .support-form {
+        max-width: 100%;
+    }
+    .support-form input,
+    .support-form textarea {
+        font-size: 14px;
+    }
+    .char-counter {
+        font-size: 10px;
+        bottom: 3px;
+        right: 8px;
+    }
+    .submit-btn {
+        font-size: 14px;
+        padding: 8px 20px;
     }
     .accordion-summary {
         font-size: 16px;
@@ -504,10 +613,6 @@ h2 {
     }
     .header-shield-icon {
         font-size: 36px;
-    }
-    .separator {
-        margin: 0 5px;
-        font-size: 20px;
     }
 }
 
@@ -567,6 +672,12 @@ footer {
     background-color: #ccd3dd;
     z-index: 1;
     text-align: center;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 footer .social-icons a {
