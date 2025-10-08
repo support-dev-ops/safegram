@@ -145,9 +145,14 @@ header {
     align-items: center;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .header-icon {
-    height: 40px;
-    margin-bottom: 10px;
+    height: 48px;
     vertical-align: middle;
 }
 
@@ -155,7 +160,7 @@ h1 {
     font-family: 'Rubik', sans-serif;
     font-weight: 700;
     font-size: 40px;
-    margin: 0 0 20px;
+    margin: 0;
     color: #333333;
     text-transform: uppercase;
 }
@@ -468,6 +473,13 @@ h2 {
     .accordion-icon {
         font-size: 1.5em;
     }
+    .header-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .header-icon {
+        height: 40px;
+    }
 }
 
 .download {
@@ -510,11 +522,11 @@ h2 {
 
 .big-download-btn .small-text {
     font-size: 16px;
-    transform: translateY(2px);
+    transform: translateY(6px);
 }
 
 .big-download-btn .windows-text {
-    transform: translateY(-2px);
+    transform: translateY(-6px);
 }
 
 footer {
