@@ -10,7 +10,7 @@
     --card-height: 390px;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 12px;
+    --card-bg-blur-amount: 14px;
     --card-shadow: 
         0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Цвет #b0b7c2 */
         inset 0 0 0.1rem hsl(214 16% 74% / 20%),
@@ -86,8 +86,9 @@ nav {
 
 .logo-container span {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 550;
     color: #0088CC;
+    text-transform: uppercase;
 }
 
 .nav-links {
@@ -143,16 +144,16 @@ header {
 
 h1 {
     font-size: 40px;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
     font-weight: 700;
     color: #333333;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 40px;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
     color: #333333;
     text-transform: uppercase;
 }
@@ -185,7 +186,7 @@ h2 {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1), left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1); /* Добавлен left для плавного возврата */
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1), left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform: translateY(0);
     position: relative;
     left: 0;
@@ -205,7 +206,7 @@ h2 {
     position: relative;
     left: 50px;
     transition: left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-delay: 0.15s; /* Увеличено с 0.1s для мягкости */
+    transition-delay: 0.15s;
 }
 
 .title {
@@ -473,10 +474,17 @@ h2 {
     font-size: 28px;
     border-radius: 10px;
     transition: background-color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .big-download-btn:hover {
     background-color: #006BB3;
+}
+
+.big-download-btn i {
+    font-size: 24px;
 }
 
 footer {
