@@ -68,7 +68,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #d7dee6;
+    background-color: #b0b9c6; /* Более тёмный оттенок #d7dee6 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
@@ -474,10 +474,9 @@ h2 {
     font-size: 20px;
     border-radius: 10px;
     transition: background-color 0.4s;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
+    display: flex; /* Изменено на flex для горизонтального выравнивания */
+    align-items: center; /* Центрирование по вертикали */
+    gap: 10px; /* Отступ между иконкой и текстом */
     line-height: 1.2;
 }
 
@@ -489,24 +488,33 @@ h2 {
     font-size: 32px;
 }
 
+.big-download-btn span {
+    display: flex;
+    flex-direction: column; /* Текст в столбец */
+    justify-content: center; /* Центрирование текста по вертикали */
+    line-height: 1.5; /* Расстояние между строками */
+}
+
 footer {
     padding: 20px;
     font-size: 14px;
     color: #666666;
     border-top: 2px solid hsl(214 16% 74%);
     margin-top: auto;
-    background-color: #d7dee6;
+    background-color: #b0b9c6; /* Более тёмный оттенок #d7dee6 */
     z-index: 1;
+    text-align: center;
 }
 
-footer a {
+footer .social-icons a {
     color: #0088CC;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0 15px;
+    font-size: 24px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer .social-icons a:hover {
+    color: #006BB3;
 }
 
 footer p {
