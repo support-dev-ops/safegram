@@ -17,8 +17,8 @@
             <span>SafeGram</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#" class="underline">FEATURES</a></li>
-            <li><a href="#" class="underline">FAQ</a></li>
+            <li><a href="#features" class="underline">FEATURES</a></li>
+            <li><a href="#faq" class="underline">FAQ</a></li>
             <li><a href="#" class="underline">SUPPORT</a></li>
         </ul>
     </nav>
@@ -29,7 +29,7 @@
         </div>
         <h2>Your secure Telegram</h2>
     </header>
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="card">
                 <h3 class="title">tdata Protection</h3>
@@ -39,7 +39,7 @@
                 <div class="bar">
                     <div class="emptybar"></div>
                 </div>
-                <p class="feature-text">Encryption with DPAPI for data protection</p>
+                <p class="feature-text">Secure your data with DPAPI encryption</p>
             </div>
             <div class="card">
                 <h3 class="title">Device Binding</h3>
@@ -49,17 +49,17 @@
                 <div class="bar">
                     <div class="emptybar"></div>
                 </div>
-                <p class="feature-text">Session binding to your device</p>
+                <p class="feature-text">Protect privacy, no data collection</p>
             </div>
             <div class="card">
-                <h3 class="title">Installation</h3>
+                <h3 class="title">Open Source</h3>
                 <div class="content">
                     <i class="fa-solid fa-code feature-icon"></i>
                 </div>
                 <div class="bar">
                     <div class="emptybar"></div>
                 </div>
-                <p class="feature-text">Fast and easy installation</p>
+                <p class="feature-text"><a href="https://github.com" target="_blank">SafeGram: open-source on GitHub</a></p>
             </div>
             <div class="card">
                 <h3 class="title">Compatibility</h3>
@@ -69,7 +69,7 @@
                 <div class="bar">
                     <div class="emptybar"></div>
                 </div>
-                <p class="feature-text">Full compatibility with Telegram</p>
+                <p class="feature-text">Seamless Telegram compatibility</p>
             </div>
         </div>
     </section>
@@ -79,9 +79,9 @@
             <span><span class="small-text">Download on the</span><br><span class="windows-text">Windows</span></span>
         </a>
     </section>
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
         <div class="site-container">
-            <div id="faq" class="faq-body">
+            <div class="faq-body">
                 <div class="faq-header">
                     <h3 class="faq-title">FAQ</h3>
                     <div class="seperator"></div>
@@ -170,6 +170,14 @@
                     content.style.maxHeight = content.scrollHeight + 'px';
                     icon.textContent = '-';
                 }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
