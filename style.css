@@ -151,7 +151,13 @@ header {
 }
 
 .header-icon {
-    font-size: 70px;
+    height: 48px;
+    vertical-align: middle;
+}
+
+.header-shield-icon {
+    font-size: 50px;
+    color: #0088CC;
     vertical-align: middle;
 }
 
@@ -475,8 +481,8 @@ h2 {
     .header-content {
         flex-direction: column;
     }
-    .header-icon {
-        font-size: 50px;
+    .header-shield-icon {
+        font-size: 40px;
     }
 }
 
