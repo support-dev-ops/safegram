@@ -68,7 +68,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #b0b9c6; /* Более тёмный оттенок #d7dee6 */
+    background-color: #c4cbd5; /* Светлее #b0b9c6, темнее #d7dee6 */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
@@ -469,15 +469,16 @@ h2 {
 .big-download-btn {
     background-color: #0088CC;
     color: #FFFFFF;
-    padding: 15px 30px;
+    padding: 10px 30px;
     text-decoration: none;
     font-size: 20px;
     border-radius: 10px;
     transition: background-color 0.4s;
-    display: flex; /* Изменено на flex для горизонтального выравнивания */
-    align-items: center; /* Центрирование по вертикали */
-    gap: 10px; /* Отступ между иконкой и текстом */
+    display: flex;
+    align-items: center;
+    gap: 10px;
     line-height: 1.2;
+    width: 200px;
 }
 
 .big-download-btn:hover {
@@ -490,9 +491,9 @@ h2 {
 
 .big-download-btn span {
     display: flex;
-    flex-direction: column; /* Текст в столбец */
-    justify-content: center; /* Центрирование текста по вертикали */
-    line-height: 1.5; /* Расстояние между строками */
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.3;
 }
 
 footer {
@@ -501,7 +502,7 @@ footer {
     color: #666666;
     border-top: 2px solid hsl(214 16% 74%);
     margin-top: auto;
-    background-color: #b0b9c6; /* Более тёмный оттенок #d7dee6 */
+    background-color: #c4cbd5; /* Светлее #b0b9c6, темнее #d7dee6 */
     z-index: 1;
     text-align: center;
 }
