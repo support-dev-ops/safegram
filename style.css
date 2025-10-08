@@ -6,8 +6,8 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 272px;
-    --card-height: 390px;
+    --card-width: 280px;
+    --card-height: 400px;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
     --card-bg-blur-amount: 14px;
@@ -68,7 +68,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 40px;
-    background-color: #ccd3dd; /* Светлее #c4cbd5, темнее #d7dee6 */
+    background-color: #ccd3dd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 1;
@@ -146,13 +146,13 @@ header {
 }
 
 .header-icon {
-    height: 40px; /* Соответствует font-size h1 */
+    height: 40px;
     margin-bottom: 10px;
     vertical-align: middle;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 700;
     font-size: 40px;
     margin: 0 0 20px;
@@ -203,7 +203,7 @@ h2 {
 }
 
 .card:not(:first-child) {
-    margin-left: -50px;
+    margin-left: -54px;
 }
 
 .card:hover {
@@ -276,6 +276,8 @@ h2 {
     opacity: 0;
     max-height: 0;
     transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card:hover .feature-text {
@@ -469,7 +471,7 @@ h2 {
 }
 
 .download {
-    padding: 40px 20px 60px 20px;
+    padding: 0px 20px 60px 20px;
     margin-bottom: 0;
     position: relative;
     z-index: 1;
@@ -508,6 +510,11 @@ h2 {
 
 .big-download-btn .small-text {
     font-size: 16px;
+    transform: translateY(2px);
+}
+
+.big-download-btn .windows-text {
+    transform: translateY(-2px);
 }
 
 footer {
@@ -516,7 +523,7 @@ footer {
     color: #666666;
     border-top: 2px solid hsl(214 16% 74%);
     margin-top: auto;
-    background-color: #ccd3dd; /* Светлее #c4cbd5, темнее #d7dee6 */
+    background-color: #ccd3dd;
     z-index: 1;
     text-align: center;
 }
