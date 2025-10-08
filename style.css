@@ -137,7 +137,7 @@ nav {
 }
 
 header {
-    padding: 60px 20px;
+    padding: 40px 20px;
     position: relative;
     z-index: 1;
 }
@@ -162,7 +162,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 60px 20px;
+    padding: 40px 20px;
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
@@ -469,14 +469,16 @@ h2 {
 .big-download-btn {
     background-color: #0088CC;
     color: #FFFFFF;
-    padding: 20px 50px;
+    padding: 15px 30px;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 20px;
     border-radius: 10px;
     transition: background-color 0.4s;
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    flex-direction: column;
+    line-height: 1.2;
 }
 
 .big-download-btn:hover {
@@ -484,7 +486,7 @@ h2 {
 }
 
 .big-download-btn i {
-    font-size: 24px;
+    font-size: 32px;
 }
 
 footer {
