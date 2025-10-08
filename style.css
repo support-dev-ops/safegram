@@ -87,8 +87,9 @@ nav {
 }
 
 .logo-container span {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
     font-size: 20px;
-    font-weight: 550;
     color: #0088CC;
     text-transform: uppercase;
 }
@@ -138,6 +139,10 @@ nav {
     }
 }
 
+.feature-text a .underline:hover {
+    opacity: 0.8;
+}
+
 header {
     margin-top: 80px;
     padding: 40px 20px 25px 20px;
@@ -185,7 +190,7 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 40px;
-    padding: 40px 20px 65px 20px;
+    padding: 20px 20px 35px 20px;
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
@@ -443,7 +448,7 @@ h2 {
     }
     .features {
         flex-direction: column;
-        padding: 40px 10px 65px 10px;
+        padding: 20px 10px 35px 10px;
     }
     .container {
         width: 100%;
