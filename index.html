@@ -161,6 +161,30 @@
                 }
             });
         });
+
+        // Управление наложением карточек
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const index = Array.from(cards).indexOf(card);
+                cards.forEach((otherCard, i) => {
+                    if (i > index) {
+                        otherCard.style.transform = 'translateX(52px)';
+                        otherCard.style.transition = 'transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                    }
+                });
+                card.style.zIndex = 2;
+            });
+            card.addEventListener('mouseleave', () => {
+                cards.forEach((otherCard, i) => {
+                    if (i >= 1) { // Сбрасываем все, кроме первой
+                        otherCard.style.transform = i === 1 ? 'translateX(0)' : 'translateX(-52px)';
+                        otherCard.style.transition = 'transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s';
+                    }
+                });
+                card.style.zIndex = 1;
+            });
+        });
     </script>
 </body>
 </html>
