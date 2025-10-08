@@ -86,9 +86,8 @@ nav {
 
 .logo-container span {
     font-size: 20px;
-    font-weight: 550;
+    font-weight: 500;
     color: #0088CC;
-    text-transform: uppercase;
 }
 
 .nav-links {
@@ -144,16 +143,16 @@ header {
 
 h1 {
     font-size: 40px;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     font-weight: 700;
     color: #333333;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 28px;
     margin: 0;
-    font-weight: 550;
+    font-weight: 500;
     color: #333333;
     text-transform: uppercase;
 }
@@ -161,7 +160,8 @@ h2 {
 .features {
     display: flex;
     justify-content: center;
-    padding: 80px 20px;
+    gap: 40px;
+    padding: 60px 20px;
     flex-wrap: wrap;
     position: relative;
     z-index: 1;
@@ -170,8 +170,8 @@ h2 {
 .container {
     width: 950px;
     display: flex;
-    justify-content: flex-start;
-    position: relative; /* Для абсолютного позиционирования карточек */
+    justify-content: center;
+    gap: 0;
 }
 
 .card {
@@ -185,34 +185,28 @@ h2 {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    position: absolute; /* Абсолютное позиционирование для наложения */
-    left: 0; /* Начальное положение, переопределяется ниже */
-    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-    will-change: transform;
-}
-
-.card:nth-child(1) {
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1), left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1); /* Добавлен left для плавного возврата */
+    transform: translateY(0);
+    position: relative;
     left: 0;
+    will-change: transform, left;
 }
 
-.card:nth-child(2) {
-    left: 220px; /* 272px - 52px */
-}
-
-.card:nth-child(3) {
-    left: 440px; /* (272px - 52px) * 2 */
-}
-
-.card:nth-child(4) {
-    left: 660px; /* (272px - 52px) * 3 */
+.card:not(:first-child) {
+    margin-left: -50px;
 }
 
 .card:hover {
     transform: translateY(-20px);
-    z-index: 2;
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-/* Динамическое смещение через JavaScript, CSS здесь не требуется */
+.card:hover ~ .card {
+    position: relative;
+    left: 50px;
+    transition: left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-delay: 0.15s; /* Увеличено с 0.1s для мягкости */
+}
 
 .title {
     color: #333333;
@@ -226,7 +220,7 @@ h2 {
     top: 150px;
     left: 20px;
     height: 5px;
-    width: 225px;
+    width: 230px;
 }
 
 .emptybar {
@@ -408,7 +402,7 @@ h2 {
         font-size: 28px;
     }
     h2 {
-        font-size: 28px;
+        font-size: 20px;
     }
     .features {
         flex-direction: column;
@@ -418,17 +412,14 @@ h2 {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        position: static; /* Сбрасываем абсолютное позиционирование */
     }
     .card {
-        position: relative; /* Возвращаем относительное позиционирование */
         width: 90%;
-        left: auto !important; /* Сбрасываем left */
-        transform: translateX(0) !important;
+        margin-left: 0 !important;
         margin-bottom: 20px;
     }
     .card:hover ~ .card {
-        transform: translateX(0);
+        left: 0;
     }
     .bar {
         width: 80%;
