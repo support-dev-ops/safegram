@@ -86,8 +86,9 @@ nav {
 
 .logo-container span {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 550; /* Обновлено с 500 */
     color: #0088CC;
+    text-transform: uppercase; /* Добавлено */
 }
 
 .nav-links {
@@ -143,16 +144,16 @@ header {
 
 h1 {
     font-size: 40px;
-    margin: 0 0 10px;
+    margin: 0 0 20px; /* Обновлено с 10px */
     font-weight: 700;
     color: #333333;
     text-transform: uppercase;
 }
 
 h2 {
-    font-size: 28px;
+    font-size: 40px; /* Обновлено с 28px */
     margin: 0;
-    font-weight: 500;
+    font-weight: 550; /* Обновлено с 500 */
     color: #333333;
     text-transform: uppercase;
 }
@@ -185,15 +186,13 @@ h2 {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
-    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1), left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1); /* Добавлен left для плавного возврата */
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
     transform: translateY(0);
-    position: relative;
-    left: 0;
-    will-change: transform, left;
+    will-change: transform;
 }
 
 .card:not(:first-child) {
-    margin-left: -50px;
+    transform: translateX(-50px); /* Замена margin-left: -50px */
 }
 
 .card:hover {
@@ -202,10 +201,9 @@ h2 {
 }
 
 .card:hover ~ .card {
-    position: relative;
-    left: 50px;
-    transition: left 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transition-delay: 0.15s; /* Увеличено с 0.1s для мягкости */
+    transform: translateX(0); /* Смещение соседних карт */
+    transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition-delay: 0.2s; /* Увеличено с 0.15s */
 }
 
 .title {
@@ -402,7 +400,7 @@ h2 {
         font-size: 28px;
     }
     h2 {
-        font-size: 20px;
+        font-size: 28px; /* Обновлено для мобильных */
     }
     .features {
         flex-direction: column;
@@ -415,11 +413,11 @@ h2 {
     }
     .card {
         width: 90%;
-        margin-left: 0 !important;
+        transform: translateX(0) !important; /* Отключаем смещение на мобильных */
         margin-bottom: 20px;
     }
     .card:hover ~ .card {
-        left: 0;
+        transform: translateX(0);
     }
     .bar {
         width: 80%;
