@@ -70,8 +70,10 @@ nav {
     padding: 10px 40px;
     background-color: #ccd3dd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo-container {
@@ -80,7 +82,7 @@ nav {
 }
 
 .logo {
-    height: 60px;
+    height: 50px;
     margin-right: 10px;
 }
 
@@ -137,6 +139,7 @@ nav {
 }
 
 header {
+    margin-top: 80px;
     padding: 40px 20px 25px 20px;
     position: relative;
     z-index: 1;
@@ -294,11 +297,6 @@ h2 {
 .feature-text a {
     color: #333333;
     text-decoration: none;
-    transition: color 0.4s ease;
-}
-
-.feature-text a:hover {
-    color: #0088CC;
 }
 
 .card:hover .feature-text {
@@ -421,6 +419,12 @@ h2 {
     transition: opacity 0.4s ease;
 }
 
+.separator {
+    color: #0088CC;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -496,6 +500,10 @@ h2 {
     .header-shield-icon {
         font-size: 36px;
     }
+    .separator {
+        margin: 0 5px;
+        font-size: 20px;
+    }
 }
 
 .download {
@@ -559,7 +567,7 @@ footer {
 footer .social-icons a {
     color: #0088CC;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0;
     font-size: 24px;
 }
 
