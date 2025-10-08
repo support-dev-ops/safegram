@@ -6,11 +6,11 @@
     --bg-color: hsl(var(--base-hue) 25% 25%);
     --text-color: hsl(var(--base-hue) 40% 25%);
     
-    --card-width: 272px; /* Увеличено с 270px */
+    --card-width: 272px;
     --card-height: 390px;
     --card-padding: 2.25rem;
     --card-corner-radius: 1.5rem;
-    --card-bg-blur-amount: 12px; /* Увеличено с 10px */
+    --card-bg-blur-amount: 12px;
     --card-shadow: 
         0 0 0.5rem 2px hsl(214 16% 74% / 35%), /* Цвет #b0b7c2 */
         inset 0 0 0.1rem hsl(214 16% 74% / 20%),
@@ -123,7 +123,7 @@ nav {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: #0088CC; /* Цвет подчёркивания в стиле проекта */
+    background-color: #0088CC;
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -142,17 +142,19 @@ header {
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 40px; /* Увеличено с 32px */
     margin: 0 0 10px;
-    font-weight: 500;
+    font-weight: 700; /* Увеличена жирность с 500 */
     color: #333333;
+    text-transform: uppercase; /* Капс */
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 28px; /* Увеличено с 24px */
     margin: 0;
-    font-weight: 400;
+    font-weight: 500; /* Увеличена жирность с 400 */
     color: #333333;
+    text-transform: uppercase; /* Капс */
 }
 
 .features {
@@ -181,10 +183,10 @@ h2 {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--card-corner-radius);
     box-shadow: var(--card-shadow);
-    backdrop-filter: blur(var(--card-bg-blur-amount)); /* 12px */
+    backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
     transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
-    transform: translateY(0); /* Базовое состояние */
+    transform: translateY(0);
     position: relative;
     left: 0;
     will-change: transform, left;
@@ -284,7 +286,7 @@ h2 {
     border-radius: var(--card-corner-radius);
     background-color: rgba(255, 255, 255, 0.05);
     font-size: 125%;
-    backdrop-filter: blur(var(--card-bg-blur-amount)); /* 12px */
+    backdrop-filter: blur(var(--card-bg-blur-amount));
     -webkit-backdrop-filter: blur(var(--card-bg-blur-amount));
     box-shadow: var(--card-shadow);
 }
@@ -397,10 +399,10 @@ h2 {
         gap: 10px;
     }
     h1 {
-        font-size: 24px;
+        font-size: 28px; /* Увеличено с 24px */
     }
     h2 {
-        font-size: 18px;
+        font-size: 20px; /* Увеличено с 18px */
     }
     .features {
         flex-direction: column;
